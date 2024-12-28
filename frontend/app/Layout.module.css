@@ -1,0 +1,35 @@
+.container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f6f9fc 0%, #eef2ff 100%);
+  }
+  
+  .navbar {
+    background: linear-gradient(to right, #4f46e5, #6366f1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navContent {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .mainContent {
+    max-width: 1280px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+  }
