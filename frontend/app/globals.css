@@ -1,21 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --primary: #4f46e5;
+    --primary-light: #6366f1;
+    --secondary: #1e293b;
+    --background: #f8fafc;
+    --surface: #ffffff;
+    --error: #ef4444;
+    --success: #22c55e;
+  }
+
+  body {
+    @apply font-['Inter',sans-serif] min-h-screen;
+    background: linear-gradient(135deg, #f6f9fc 0%, #eef2ff 100%);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .glass-morphism {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300
+    border border-gray-100;
+  }
+
+  .button-primary {
+    @apply bg-gradient-to-r from-indigo-600 to-indigo-500 
+    text-white px-6 py-2.5 rounded-xl font-medium
+    hover:from-indigo-700 hover:to-indigo-600
+    transition-all duration-300 shadow-lg shadow-indigo-500/30
+    hover:shadow-xl hover:shadow-indigo-500/40
+    flex items-center gap-2 hover:-translate-y-0.5;
+  }
+
+  .button-secondary {
+    @apply bg-white text-gray-700 px-6 py-2.5 rounded-xl font-medium
+    hover:bg-gray-50 transition-all duration-300 shadow-md
+    border border-gray-200 hover:border-gray-300
+    flex items-center gap-2;
+  }
+
+  .input-field {
+    @apply bg-gray-50/50 border border-gray-200 rounded-xl px-4 py-3
+    focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500
+    transition-all duration-300 w-full text-gray-700;
+  }
+
+  .data-grid {
+    @apply rounded-2xl overflow-hidden border-0 shadow-xl;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
